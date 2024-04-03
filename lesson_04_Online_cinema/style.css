@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+
+}
+
+.logo {
+    background-image: url("https://ir.ozone.ru/s3/multimedia-y/c1000/6389281894.jpg") ;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 50%;
+}
+.header{
+    background-color: #ff997f;
+    box-shadow: 0 0 10px darkred;
+    display: flex;
+    justify-content: start;
+    padding: 10px 20px;
+
+}
+.card{
+
+    width: 300px;
+    min-height: 400px;
+    border: 2px solid;
+    box-shadow: 0 0 20px darkred;
+
+
+}
+.card > img{
+    width: 100%;
+
+}
+.container_movies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+.card > h3{
+    margin: 0px 40%;
+
+}
+
+.fury{
+    padding: 25px;
+}
+.thor{
+    padding: 25px;
+}
+.titanic{
+    padding: 25px;
+}
+.fbeasts{
+    padding: 25px;
+}
+.matrix{
+    padding: 25px;
+}
+.terminator{
+    padding: 25px;
+}
+.predator{
+    padding: 25px;
+}
+.aliens{
+    padding: 25px;
+}
+
+
