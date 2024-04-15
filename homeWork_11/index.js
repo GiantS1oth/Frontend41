@@ -25,15 +25,15 @@ countries.unshift(temp)
 console.log(countries)
 console.log(temp)
 
-const colors = ["красный", "зелёный", "синий"];
+const colors = ["red", "green", "blue"];
 
-const animals = ["кошка", "собака", "кролик"];
+const animals = ["cat", "dog", "rabbit"];
 
 const colorsAndAnimals = [...colors,...animals];
 
-const [красный, зелёный, синий, кошка, собака, кролик] = colorsAndAnimals;
+const [red, green, blue, cat, dog, rabbit] = colorsAndAnimals;
 
-console.log(colorsAndAnimals[2], кролик)
+console.log(colorsAndAnimals[2] + ' , ' + rabbit)
 
 
 
