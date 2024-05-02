@@ -2,15 +2,28 @@
 // https://get.geojs.io/v1/ip/geo.json
 
 //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true
+
+const loader = document.querySelector('#loader')
+let mask = document.querySelector('#mask')
+const city = document.querySelector('#city')
+const temperature = document.querySelector('#temperature')
+const windSpeed = document.querySelector('#windspeed')
+const windDirection = document.querySelector('#winddirection')
+const weatherDescription = document.querySelector('#weatherdescription')
+
+
+console.log(loader)
 async function getWeather() {
 
         const res = await fetch('https://get.geojs.io/v1/ip/geo.json');
         const data = await res.json()
         const {latitude, longitude, city} = data
-        // console.log(latitude, longitude, city);
+        console.log(latitude, longitude, city);
 
         const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
         const weatherData = await weatherRes.json()
+
+        loader.classList.add('hide')
 
         const currentWeather = weatherData.current_weather;
         const {temperature, windspeed, winddirection, weathercode} = currentWeather
@@ -81,21 +94,21 @@ async function getWeather() {
                 }
         }
 
-        let mask = document.querySelector('.mask')
+const weatherDecode = decodeWeatherCode(weathercode);
 
-        window.addEventListener('load', () => {
-                mask.classList.add('hide');
-                setTimeout(() => {
-                        mask.remove();
-                },1500);
 
-        })
+document.getElementById('city').textContent = city;
+document.getElementById('temperature').textContent = temperature;
+document.getElementById('windspeed').textContent = windspeed;
+document.getElementById('winddirection').textContent = winddirection;
+document.getElementById('weatherdescription').textContent = weatherDecode;
 
-        //напишите функцию расшифровки для кода погоды
-        // выведите данные на странице
-        // используйте loader
-        // поставьте setTimeout на 1.5 сек
-        // скиньте ссылку на код и на деплой
+
+        setTimeout(() => {
+                loader.classList.add('hide');
+        }, 1500);
+
+
 
 
 
